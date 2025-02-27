@@ -19,7 +19,6 @@ A simple and responsive weather dashboard that fetches real-time weather data us
 3. Click **"Use My Location"** to get weather updates for your current location.
 
 ## 🌍 Live Demo
-🔗 [Your Deployed Link Here](#)
+🔗 https://weather-app-alpha-smoky-82.vercel.app/
 
-## 📂 Installation
-1. Clone the repository:
+
