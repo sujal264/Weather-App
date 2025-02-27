@@ -80,7 +80,7 @@ const weatherContainer = document.getElementById("weatherContainer");
 
 // Function to fetch weather data
 async function fetchWeather(city) {
-    const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
+    const API_URL = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
 
     try {
         const response = await fetch(API_URL);
@@ -103,7 +103,7 @@ function displayWeather(data) {
 
     card.innerHTML = `
         <h2>${data.name}</h2>
-        <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="Weather Icon">
+        <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="Weather Icon">
         <p>Temp: ${Math.round(data.main.temp)}°C</p>
         <p>Humidity: ${data.main.humidity}%</p>
         <p>Wind: ${data.wind.speed} m/s</p>
