@@ -31,7 +31,7 @@ const createWeatherCard=(cityName, weatherItem, index)=>{
 }
 
 const getWeatherDetails = (cityName, lat, lon) => {
-    const WEATHER_API_URL=`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
+    const WEATHER_API_URL=`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
     fetch(WEATHER_API_URL).then(res => res.json()).then(data => {
         
     
@@ -63,7 +63,7 @@ const getWeatherDetails = (cityName, lat, lon) => {
 const getCityCoordinates = () => {
     const cityName = cityInput.value.trim();
     if(!cityName) return;
-    const GEOCODING_API_URL=`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${API_KEY}`;
+    const GEOCODING_API_URL=`https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${API_KEY}`;
 
     fetch(GEOCODING_API_URL).then(res => res.json()).then(data => {
         if(!data.length) return alert(`No coordinates found for ${cityName}`);
@@ -80,7 +80,7 @@ const weatherContainer = document.getElementById("weatherContainer");
 
 // Function to fetch weather data
 async function fetchWeather(city) {
-    const API_URL = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
+    const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
 
     try {
         const response = await fetch(API_URL);
@@ -103,7 +103,7 @@ function displayWeather(data) {
 
     card.innerHTML = `
         <h2>${data.name}</h2>
-        <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="Weather Icon">
+        <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="Weather Icon">
         <p>Temp: ${Math.round(data.main.temp)}°C</p>
         <p>Humidity: ${data.main.humidity}%</p>
         <p>Wind: ${data.wind.speed} m/s</p>
